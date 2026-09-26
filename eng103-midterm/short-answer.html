@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ENG103 Short-Answer Practice — Lectures 1–6</title>
+<style>
+:root{
+  --navy:#0f3f68;
+  --blue:#1d5f93;
+  --gold:#e6a51c;
+  --ink:#1f2937;
+  --muted:#64748b;
+  --paper:#ffffff;
+  --bg:#eef3f8;
+  --line:#d7e0e9;
+  --green:#0f766e;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+header{
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  color:#fff;padding:22px 0;border-bottom:5px solid var(--gold)
+}
+.shell{max-width:1100px;margin:0 auto;padding:0 22px}
+.brand{display:flex;justify-content:space-between;gap:18px;align-items:end}
+.brand h1{margin:0;font-size:clamp(26px,4vw,40px);line-height:1.05}
+.brand p{margin:5px 0 0;color:#dbeafe}
+.badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);padding:8px 12px;border-radius:999px;font-weight:700;font-size:13px}
+main{padding:28px 0 42px}
+.page{display:none}
+.page.active{display:block}
+.panel{
+  background:var(--paper);border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 12px 30px rgba(15,63,104,.08);overflow:hidden
+}
+.page-head{padding:22px 24px;background:#f8fbfe;border-bottom:1px solid var(--line)}
+.page-head h2{margin:0 0 5px;color:var(--navy);font-size:28px}
+.page-head p{margin:0;color:var(--muted)}
+.instructions{
+  margin:18px 24px 0;padding:14px 16px;border-left:4px solid var(--gold);
+  background:#fff9e8;border-radius:8px;color:#5b4a13
+}
+.questions{padding:10px 24px 26px}
+.q{
+  border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;margin:14px 0;
+  background:#fff
+}
+.qhead{display:flex;gap:10px;align-items:flex-start}
+.num{
+  flex:0 0 34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  background:var(--navy);color:#fff;font-weight:700
+}
+.q h3{margin:3px 0 10px;font-size:17px;line-height:1.4}
+textarea{
+  width:100%;min-height:84px;resize:vertical;border:1px solid #b8c7d6;border-radius:10px;
+  padding:11px 12px;font:inherit;outline:none;background:#fbfdff
+}
+textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(29,95,147,.12)}
+.actions{
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+  padding:18px 24px;border-top:1px solid var(--line);background:#f8fbfe;position:sticky;bottom:0
+}
+button{
+  border:0;border-radius:10px;padding:12px 18px;font-weight:700;font-size:15px;cursor:pointer
+}
+.primary{background:var(--navy);color:#fff}
+.secondary{background:#e9f0f6;color:var(--navy)}
+button:hover{filter:brightness(.97)}
+.answer-card{
+  margin:14px 24px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff
+}
+.answer-title{
+  padding:13px 15px;background:#f7fafc;font-weight:700;color:var(--navy);
+  border-bottom:1px solid var(--line)
+}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.compare > div{padding:15px}
+.compare > div:first-child{border-right:1px solid var(--line);background:#fbfdff}
+.label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--muted);margin-bottom:7px}
+.model{color:#12344f}
+.model strong{color:var(--green)}
+.note{
+  margin:18px 24px;padding:14px 16px;background:#edf8f6;border:1px solid #b8e2dc;border-radius:10px;color:#155e58
+}
+footer{padding:22px;color:#6b7280;text-align:center;font-size:13px}
+@media(max-width:760px){
+  .brand{align-items:flex-start;flex-direction:column}
+  .compare{grid-template-columns:1fr}
+  .compare > div:first-child{border-right:0;border-bottom:1px solid var(--line)}
+  .actions{position:static;flex-direction:column}
+  .actions button{width:100%}
+}
+@media print{
+  body{background:#fff}
+  header,footer,.actions{display:none!important}
+  main{padding:0}
+  .shell{max-width:none;padding:0}
+  .panel{box-shadow:none;border:0}
+  .page{display:block!important;page-break-after:always}
+  .page:last-child{page-break-after:auto}
+  textarea{border:1px solid #999;min-height:65px}
+  .answer-card{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="shell brand">
+    <div>
+      <h1>ENG103 Short-Answer Practice</h1>
+      <p>Research Writing Techniques · Lectures 1–6</p>
+    </div>
+    <div class="badge">15 SAQs · Two-page practice</div>
+  </div>
+</header>
+
+<main>
+<div class="shell">
+
+<section id="questionsPage" class="page active">
+  <div class="panel">
+    <div class="page-head">
+      <h2>Page 1 — Short-Answer Questions</h2>
+      <p>Answer all 15 questions before moving to the model answers.</p>
+    </div>
+    <div class="instructions">
+      <strong>Recommended answer structure:</strong> Term → Meaning → Example. Keep each response clear and specific.
+    </div>
+    <div class="questions" id="questionList"></div>
+    <div class="actions">
+      <button class="secondary" onclick="clearAnswers()">Clear answers</button>
+      <button class="primary" onclick="showAnswers()">Next page: Compare with answers</button>
+    </div>
+  </div>
+</section>
+
+<section id="answersPage" class="page">
+  <div class="panel">
+    <div class="page-head">
+      <h2>Page 2 — Model Answers</h2>
+      <p>Compare your response with the model answer. Focus on the key concept, accurate meaning, and a relevant example where required.</p>
+    </div>
+    <div class="note">
+      These are model answers for revision. Equivalent wording is acceptable if the concept is accurate.
+    </div>
+    <div id="answerList"></div>
+    <div class="actions">
+      <button class="secondary" onclick="showQuestions()">Back to questions</button>
+      <button class="primary" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer>ENG103 · Research Writing Techniques · Lectures 1–6</footer>
+
+<script>
+const items = [
+  {
+    q:"Define research as it is presented in ENG103.",
+    a:"Research is a <strong>systematic process</strong> for acquiring new knowledge or testing existing assumptions. It begins with a clear question or problem, uses a structured method to examine evidence, and produces an answer that others can check and evaluate."
+  },
+  {
+    q:"Name and explain the three core characteristics of good research.",
+    a:"The three characteristics are <strong>systematic</strong> (organized steps rather than random activity), <strong>empirical</strong> (based on evidence, observation, or data), and <strong>critical</strong> (questioning assumptions, methods, and findings)."
+  },
+  {
+    q:"What is the difference between gathering knowledge and producing knowledge? Give one example of each.",
+    a:"<strong>Gathering knowledge</strong> means using existing credible sources to build understanding, such as writing a literature review. <strong>Producing knowledge</strong> means collecting and analyzing new data, such as conducting a survey and analyzing the responses."
+  },
+  {
+    q:"Explain the difference between natural-science research and social-science research.",
+    a:"Natural-science research focuses on <strong>physical, biological, or chemical phenomena</strong> and often seeks repeatable results under controlled conditions. Social-science research focuses on <strong>people, behavior, meaning, values, and social context</strong>, so findings may vary across people and settings."
+  },
+  {
+    q:"Distinguish among a subject, a participant, and a stakeholder in a research study.",
+    a:"A <strong>subject</strong> is the person, group, situation, or case being studied. A <strong>participant</strong> is a person who willingly provides data. A <strong>stakeholder</strong> is someone who has an interest in the research process or results, even if that person provides no data."
+  },
+  {
+    q:"What is the difference between inductive and deductive reasoning?",
+    a:"<strong>Inductive reasoning</strong> moves from data or observations to a broader explanation or theory: data → theory. <strong>Deductive reasoning</strong> starts with a theory, claim, or hypothesis and then collects data to test it: theory → data."
+  },
+  {
+    q:"In a study testing whether caffeine affects reaction time, identify the independent variable, dependent variable, and one possible extraneous variable.",
+    a:"The <strong>independent variable</strong> is the caffeine dose or caffeine condition. The <strong>dependent variable</strong> is reaction time. One possible <strong>extraneous variable</strong> is the participant's amount of sleep the night before."
+  },
+  {
+    q:"Explain the purpose of an experimental group and a control group.",
+    a:"The <strong>experimental group</strong> receives the treatment or condition being tested. The <strong>control group</strong> does not receive the treatment and provides a comparison point. This comparison helps researchers judge whether the treatment made a difference."
+  },
+  {
+    q:"What is the difference between a hypothesis and a theory?",
+    a:"A <strong>hypothesis</strong> is a specific, testable statement predicting a relationship between variables. A <strong>theory</strong> is a broader framework that explains patterns or phenomena."
+  },
+  {
+    q:"Explain the difference between a population and a sample.",
+    a:"The <strong>population</strong> is the full group the study wants to understand. The <strong>sample</strong> is the smaller group that is actually studied or surveyed."
+  },
+  {
+    q:"What is generalizability, and what makes it stronger?",
+    a:"<strong>Generalizability</strong> is applying findings from a sample to the larger population from which it came. It is stronger when the sample is sufficiently large, the sampling method is appropriate, and the sample represents the population well."
+  },
+  {
+    q:"What is transferability, and how is it different from generalizability?",
+    a:"<strong>Transferability</strong> means judging whether findings from one context may apply to a different context. Generalizability moves from a sample to the same wider population, while transferability moves from one context or setting to another."
+  },
+  {
+    q:"Distinguish among quantitative, qualitative, and mixed-methods research.",
+    a:"<strong>Quantitative research</strong> uses counted or measured data that can be analyzed statistically. <strong>Qualitative research</strong> examines meanings, experiences, opinions, and perspectives using words, interviews, observations, or open-ended responses. <strong>Mixed methods</strong> combines both quantitative and qualitative data in one study."
+  },
+  {
+    q:"Why does correlation not prove causation? Mention the two questions a researcher should ask before claiming cause and effect.",
+    a:"Correlation only shows that two variables are related; it does not prove that one directly causes the other. Researchers should ask: <strong>direction</strong> — does A cause B, or could B cause A? — and <strong>third variable</strong> — could another factor cause or influence both A and B?"
+  },
+  {
+    q:"Explain the APA rules for a paraphrase and a direct quote, including the required in-text citation information.",
+    a:"A <strong>paraphrase</strong> restates a source's idea in your own words and sentence structure and requires the author and year, for example (Smith, 2002). A <strong>direct quote</strong> uses the source's exact words in quotation marks and requires the author, year, and page number, for example (Smith, 2002, p. 14)."
+  }
+];
+
+function esc(s){
+  return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function load(){
+  const qList=document.getElementById('questionList');
+  qList.innerHTML=items.map((it,i)=>`
+    <div class="q">
+      <div class="qhead">
+        <div class="num">${i+1}</div>
+        <div style="flex:1">
+          <h3>${it.q}</h3>
+          <textarea id="ans${i}" placeholder="Write your answer here..." oninput="saveAnswer(${i})"></textarea>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  items.forEach((_,i)=>{
+    const saved=localStorage.getItem('eng103_saq_'+i);
+    if(saved!==null) document.getElementById('ans'+i).value=saved;
+  });
+}
+
+function saveAnswer(i){
+  localStorage.setItem('eng103_saq_'+i,document.getElementById('ans'+i).value);
+}
+
+function showAnswers(){
+  const list=document.getElementById('answerList');
+  list.innerHTML=items.map((it,i)=>{
+    const student=(document.getElementById('ans'+i)?.value || localStorage.getItem('eng103_saq_'+i) || '').trim();
+    return `
+      <div class="answer-card">
+        <div class="answer-title">${i+1}. ${it.q}</div>
+        <div class="compare">
+          <div>
+            <div class="label">Your answer</div>
+            <div>${student ? esc(student).replace(/\n/g,'<br>') : '<em>No answer entered.</em>'}</div>
+          </div>
+          <div>
+            <div class="label">Model answer</div>
+            <div class="model">${it.a}</div>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+  document.getElementById('questionsPage').classList.remove('active');
+  document.getElementById('answersPage').classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function showQuestions(){
+  document.getElementById('answersPage').classList.remove('active');
+  document.getElementById('questionsPage').classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function clearAnswers(){
+  if(!confirm('Clear all 15 answers?')) return;
+  items.forEach((_,i)=>{
+    localStorage.removeItem('eng103_saq_'+i);
+    const el=document.getElementById('ans'+i);
+    if(el) el.value='';
+  });
+}
+
+load();
+</script>
+</body>
+</html>
